@@ -31,6 +31,19 @@ int cubic_mss(const int*arr, int size){
     return maxSum;
 }
 
+int linear_mss(const int*arr, int size){
+    int maxSum = 0;
+    int thisSum = 0;
+    for(int i=0; i < size; i++){
+        thisSum = thisSum + arr[i];
+        if(thisSum > maxSum)
+            maxSum = thisSum;
+        else if(thisSum < 0)
+            thisSum = 0;
+    }
+    return maxSum;
+}
+
 
 int main () {
     static const int arr1[] = {1, 2, -30, 4, 5};
